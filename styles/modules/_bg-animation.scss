@@ -1,0 +1,130 @@
+.hudosan__el {
+  position: relative;
+  .inview {
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      display: inline-block;
+      opacity: 1;
+      border-style: none;
+      height: 100%;
+      width: 100%;
+      z-index:-10;
+      @include animation(
+        $name: kf-bg-animation,
+        $duration: 1.6s,
+        $timing-function: ease-in-out
+      )
+    }
+  }
+}
+@keyframes kf-bg-animation {
+  0% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.main-title-part-odd {
+    position: relative;
+    &.inview {
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: '';
+          opacity: 1;
+          background-color: $clightGreen;
+          border-style: groove;
+          height: 100%;
+          width: 100%;
+          z-index: -1;
+          @include animation(
+              $name: kf-bg-animation-odd,
+              $duration: 1.6s,
+              $timing-function: ease-in-out
+          )
+        }
+        &:hover {
+          &::before {
+            @include animation(
+                $name: kf-bg-animation-hover,
+                $duration: 1.0s,
+                $timing-function: ease-in-out
+            )
+          }
+        }
+    }
+  }
+
+@keyframes kf-bg-animation-odd {
+    0% {
+        transform-origin: left;
+        transform: scaleX(0) skew(0deg);
+      }
+    50% {
+        transform-origin: left;
+        transform: scaleX(1) skew(0deg);
+    }
+    100% {
+        transform: scaleX(1) skew(-20deg);
+    }
+}
+.main-title-part-even {
+    position: relative;
+    &.inview {
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: '';
+          opacity: 1;
+          background-color: $clightGreen;
+          border-style: groove;
+          height: 100%;
+          width: 100%;
+          z-index: -1;
+          @include animation(
+              $name: kf-bg-animation-even,
+              $duration: 1.6s,
+              $timing-function: ease-in-out
+          )
+        }
+        &:hover {
+          &::before {
+            @include animation(
+                $name: kf-bg-animation-hover,
+                $duration: 1.0s,
+                $timing-function: ease-in-out
+            )
+          }
+        }
+    }
+  }
+
+@keyframes kf-bg-animation-even {
+    0% {
+        transform-origin: left;
+        transform: scaleX(0) skew(0deg);
+      }
+    50% {
+        transform-origin: left;
+        transform: scaleX(1) skew(0deg);
+    }
+    100% {
+        transform: scaleX(1) skew(-20deg);
+    }
+}
+@keyframes kf-bg-animation-hover {
+  0% {
+      transform: skew(-20deg);
+  }
+  100% {
+      transform: skew(20deg);
+  }
+}

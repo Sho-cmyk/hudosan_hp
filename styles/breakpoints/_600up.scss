@@ -1,0 +1,79 @@
+/******************************************************************
+
+Stylesheet: 600px以上のタブレットやモニタで適用
+
+******************************************************************/
+.font-sm {
+    font-size: 15px;
+}
+.font-lr {
+    font-size: 20px;
+}
+.flex {
+    flex-direction: row;
+}
+.flex-odd {
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.flex-even {
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+}
+
+.hudosan {
+    &__item__odd {
+        margin-bottom: 25px;
+    } 
+    &__item__even {
+        margin-bottom: 25px;  
+    } 
+    &__el {
+        margin-left: 10px;
+        flex-basis: 50%;
+    }
+}
+
+@keyframes kf-cover-slide-even-item {
+    0% {
+        transform-origin: right;
+        transform: scaleX(0);
+    }
+    50% {
+        transform-origin: right;
+        transform: scaleX(1);
+    }
+    50.1% {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    100% {
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+}
+
+@keyframes kf-bg-animation-odd {
+    0% {
+        transform-origin: right;
+        transform: scaleX(0) skew(0deg);
+      }
+    50% {
+        transform-origin: right;
+        transform: scaleX(1) skew(0deg);
+    }
+    100% {
+        transform: scaleX(1) skew(-20deg);
+    }
+}
+
+.footer {
+    & .logo {
+        justify-content: flex-start;
+    }
+
+    &__li {
+        margin-left: 0;
+        margin-right: 30px;
+    }
+}

@@ -1,0 +1,50 @@
+.tween-animate-title,
+.tween-animate-subtitle {
+  opacity: 0;
+
+  &.inview {
+    opacity: 1;
+
+    & .char {
+      display: inline-block;
+    }
+  }
+
+  & .char {
+    opacity: 0;
+  }
+}
+.hudosan__el {
+    overflow: hidden;
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: $clightGreen;
+      transition:all 2.0s;
+      opacity: 1;
+      transform: translateX(-100%);
+    }
+  }
+
+.hudosan__el:hover{
+  position: relative;
+  &::after{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes underline-animation {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  100% {
+    transform-origin: left;
+    transform: scaleX(1); 
+  }
+}
